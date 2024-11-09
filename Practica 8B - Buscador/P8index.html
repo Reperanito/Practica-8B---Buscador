@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar en Bookgram</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        #barraSuperior {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #4285f4;
+            color: white;
+            padding: 15px;
+        }
+        #barraSuperior img {
+            width: 30px;
+            height: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        #extensiones {
+            background-color: #f4b400;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #search-container input[type="text"] {
+            width: 80%;
+            max-width: 500px;
+            padding: 10px;
+            font-size: 1.2em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #search-container button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #34a853;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #4285f4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="barraSuperior">
+        <img src="icono.png" alt="iconoRS">
+        <h1>Buscar en Bookgram</h1>
+        <button id="extensiones">Extensiones</button>
+    </div>
+
+    <div id="search-container">
+        <input type="text" placeholder="Busca en Bookgram..." id="search-input">
+        <button onclick="buscar()">Buscar</button>
+    </div>
+
+    <footer>
+        <p>Jorge Julian Hernandez Gonzalez 2024</p>
+    </footer>
+
+    <script>
+        function buscar() {
+            const query = document.getElementById("search-input").value;
+            if (query) {
+                window.location.href = `Bookgram.html?search=${encodeURIComponent(query)}`;
+            } else {
+                alert("Por favor, ingresa un término de búsqueda.");
+            }
+        }
+    </script>
+</body>
+</html>
